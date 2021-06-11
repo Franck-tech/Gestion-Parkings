@@ -1,0 +1,426 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GestionParking
+</name>
+</assembly>
+<members>
+<member name="T:GestionParking.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.access">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.account">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.car_parking">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.car_solid_96">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.check_square_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.clients">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.confused_regular_36">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.confused_regular_361">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.diskette__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.diskette__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.eteindre">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.eteindre__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.eteindre__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.follow__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.funnel__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.group_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.home_circle_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.house__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.image_add_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.list_plus_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.minus_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.money">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.next_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.parking">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.parking__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.parking_solid_108">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.pencil_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.power_off_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.power_off_regular_241">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.previous">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.printer__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.profile__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.revision_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.shield_regular_48">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.sync_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.trash_solid_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.user_plus_solid_36">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.user_solid_36">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.user_x_regular_36">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.window_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.windows_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GestionParking.My.Resources.Resources.x_regular_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.AutomobileDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.ClientsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.PayementDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.PayerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.UtilisateursDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.CompteUtilisateur_RDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.Payement_RDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.AutomobileRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.ClientsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.PayementRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.PayerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.UtilisateursRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.CompteUtilisateur_RRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.Payement_RRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.AutomobileRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.ClientsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.PayementRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.PayerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.UtilisateursRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.CompteUtilisateur_RRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSet.Payement_RRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.AutomobileTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.ClientsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.PayementTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.PayerTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.UtilisateursTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.CompteUtilisateur_RTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.Payement_RTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(GestionParking.GestionsParkingsDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(GestionParking.GestionsParkingsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(GestionParking.GestionsParkingsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager.UpdateAll(GestionParking.GestionsParkingsDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:GestionParking.GestionsParkingsDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
