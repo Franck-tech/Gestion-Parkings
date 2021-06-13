@@ -66,7 +66,7 @@ Partial Class Form1
         '
         'Button6
         '
-        Me.Button6.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Button6.BackColor = System.Drawing.Color.Turquoise
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -125,7 +125,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = Global.GestionParking.My.Resources.Resources.parking__1_
@@ -139,7 +139,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.SteelBlue
+        Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.ClientSize = New System.Drawing.Size(750, 476)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)

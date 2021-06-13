@@ -24,6 +24,7 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -52,7 +53,8 @@ Partial Class Form2
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Panel1.Controls.Add(Me.Button9)
         Me.Panel1.Controls.Add(Me.Button8)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -63,14 +65,24 @@ Partial Class Form2
         Me.Panel1.Size = New System.Drawing.Size(200, 632)
         Me.Panel1.TabIndex = 0
         '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Button9.Location = New System.Drawing.Point(0, 597)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(200, 23)
+        Me.Button9.TabIndex = 7
+        Me.Button9.Text = "SeDeconnecter"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
         'Button8
         '
-        Me.Button8.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button8.BackColor = System.Drawing.Color.MidnightBlue
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Elephant", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.Image = Global.GestionParking.My.Resources.Resources.money
-        Me.Button8.Location = New System.Drawing.Point(3, 420)
+        Me.Button8.Location = New System.Drawing.Point(3, 333)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(197, 43)
         Me.Button8.TabIndex = 6
@@ -80,12 +92,12 @@ Partial Class Form2
         '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button4.BackColor = System.Drawing.Color.MidnightBlue
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Elephant", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Image = Global.GestionParking.My.Resources.Resources.profile__2_
-        Me.Button4.Location = New System.Drawing.Point(3, 556)
+        Me.Button4.Location = New System.Drawing.Point(3, 414)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(197, 43)
         Me.Button4.TabIndex = 5
@@ -95,7 +107,7 @@ Partial Class Form2
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = Global.GestionParking.My.Resources.Resources.car_parking
@@ -107,12 +119,12 @@ Partial Class Form2
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button3.BackColor = System.Drawing.Color.MidnightBlue
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Elephant", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.GestionParking.My.Resources.Resources.clients
-        Me.Button3.Location = New System.Drawing.Point(3, 286)
+        Me.Button3.Location = New System.Drawing.Point(3, 247)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(197, 43)
         Me.Button3.TabIndex = 4
@@ -122,12 +134,12 @@ Partial Class Form2
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Elephant", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.GestionParking.My.Resources.Resources.house__1_
-        Me.Button2.Location = New System.Drawing.Point(0, 165)
+        Me.Button2.Location = New System.Drawing.Point(0, 172)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(200, 43)
         Me.Button2.TabIndex = 3
@@ -144,16 +156,14 @@ Partial Class Form2
         Me.Panel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.Location = New System.Drawing.Point(200, 137)
+        Me.Panel4.Location = New System.Drawing.Point(200, 138)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1371, 517)
+        Me.Panel4.Size = New System.Drawing.Size(942, 494)
         Me.Panel4.TabIndex = 3
         '
         'Panel3
         '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel3.BackColor = System.Drawing.Color.MidnightBlue
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.Label5)
@@ -162,7 +172,7 @@ Partial Class Form2
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Location = New System.Drawing.Point(200, 43)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1170, 98)
+        Me.Panel3.Size = New System.Drawing.Size(976, 98)
         Me.Panel3.TabIndex = 8
         '
         'Label9
@@ -189,7 +199,7 @@ Partial Class Form2
         '
         Me.Label5.Font = New System.Drawing.Font("Elephant", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label5.Location = New System.Drawing.Point(1063, 10)
+        Me.Label5.Location = New System.Drawing.Point(844, 10)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(83, 19)
         Me.Label5.TabIndex = 6
@@ -211,7 +221,7 @@ Partial Class Form2
         '
         Me.Label4.Font = New System.Drawing.Font("Elephant", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label4.Location = New System.Drawing.Point(1053, 48)
+        Me.Label4.Location = New System.Drawing.Point(834, 36)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(108, 19)
         Me.Label4.TabIndex = 5
@@ -231,22 +241,20 @@ Partial Class Form2
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel2.BackColor = System.Drawing.Color.MidnightBlue
         Me.Panel2.Controls.Add(Me.Button6)
         Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Location = New System.Drawing.Point(200, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1170, 50)
+        Me.Panel2.Size = New System.Drawing.Size(942, 50)
         Me.Panel2.TabIndex = 9
         '
         'Button6
         '
         Me.Button6.Image = Global.GestionParking.My.Resources.Resources.window_regular_24
-        Me.Button6.Location = New System.Drawing.Point(1089, 3)
+        Me.Button6.Location = New System.Drawing.Point(856, 11)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(40, 26)
         Me.Button6.TabIndex = 4
@@ -255,7 +263,7 @@ Partial Class Form2
         'Button7
         '
         Me.Button7.Image = Global.GestionParking.My.Resources.Resources.x_regular_24
-        Me.Button7.Location = New System.Drawing.Point(1125, 3)
+        Me.Button7.Location = New System.Drawing.Point(892, 11)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(40, 26)
         Me.Button7.TabIndex = 5
@@ -264,7 +272,7 @@ Partial Class Form2
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Elephant", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(435, 15)
+        Me.Label1.Location = New System.Drawing.Point(302, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(331, 35)
         Me.Label1.TabIndex = 2
@@ -274,7 +282,7 @@ Partial Class Form2
         'Button5
         '
         Me.Button5.Image = Global.GestionParking.My.Resources.Resources.minus_regular_24
-        Me.Button5.Location = New System.Drawing.Point(1053, 3)
+        Me.Button5.Location = New System.Drawing.Point(820, 11)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(40, 26)
         Me.Button5.TabIndex = 3
@@ -284,7 +292,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1370, 632)
+        Me.ClientSize = New System.Drawing.Size(1142, 632)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
@@ -293,7 +301,6 @@ Partial Class Form2
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Application"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -321,4 +328,5 @@ Partial Class Form2
     Friend WithEvents Button7 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Button5 As Button
+    Friend WithEvents Button9 As Button
 End Class

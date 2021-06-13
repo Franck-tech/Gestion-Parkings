@@ -974,7 +974,7 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddClientsRow(ByVal Nom As String, ByVal Prénoms As String, ByVal Age As Integer, ByVal Sexe As String, ByVal Tel As Integer, ByVal Série As String, ByVal _N_Matricule As Integer, ByVal Déchargé As Boolean, ByVal _N_Vérification As String) As ClientsRow
+        Public Overloads Function AddClientsRow(ByVal Nom As String, ByVal Prénoms As String, ByVal Age As Short, ByVal Sexe As String, ByVal Tel As Integer, ByVal Série As String, ByVal _N_Matricule As Short, ByVal Déchargé As Boolean, ByVal _N_Vérification As String) As ClientsRow
             Dim rowClientsRow As ClientsRow = CType(Me.NewRow,ClientsRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Nom, Prénoms, Age, Sexe, Tel, Série, _N_Matricule, Déchargé, _N_Vérification}
             rowClientsRow.ItemArray = columnValuesArray
@@ -1026,7 +1026,7 @@ Partial Public Class GestionsParkingsDataSet
             MyBase.Columns.Add(Me.columnNom)
             Me.columnPrénoms = New Global.System.Data.DataColumn("Prénoms", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPrénoms)
-            Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAge)
             Me.columnSexe = New Global.System.Data.DataColumn("Sexe", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSexe)
@@ -1034,7 +1034,7 @@ Partial Public Class GestionsParkingsDataSet
             MyBase.Columns.Add(Me.columnTel)
             Me.columnSérie = New Global.System.Data.DataColumn("Série", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSérie)
-            Me._columnN_Matricule = New Global.System.Data.DataColumn("N°Matricule", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnN_Matricule = New Global.System.Data.DataColumn("N°Matricule", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             Me._columnN_Matricule.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnN_Matricule")
             Me._columnN_Matricule.ExtendedProperties.Add("Generator_UserColumnName", "N°Matricule")
             MyBase.Columns.Add(Me._columnN_Matricule)
@@ -1050,11 +1050,11 @@ Partial Public Class GestionsParkingsDataSet
             Me.columnId_Cli.AutoIncrementStep = -1
             Me.columnId_Cli.AllowDBNull = false
             Me.columnId_Cli.Unique = true
-            Me.columnNom.MaxLength = 255
-            Me.columnPrénoms.MaxLength = 255
+            Me.columnNom.MaxLength = 35
+            Me.columnPrénoms.MaxLength = 60
             Me.columnSexe.MaxLength = 1
-            Me.columnSérie.MaxLength = 255
-            Me._columnN_Vérification.MaxLength = 255
+            Me.columnSérie.MaxLength = 2
+            Me._columnN_Vérification.MaxLength = 4
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1194,7 +1194,7 @@ Partial Public Class GestionsParkingsDataSet
         
         Private columnId_Pay As Global.System.Data.DataColumn
         
-        Private _columnMontant_Départ As Global.System.Data.DataColumn
+        Private columnMontant As Global.System.Data.DataColumn
         
         Private columnTotal As Global.System.Data.DataColumn
         
@@ -1243,9 +1243,9 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property _Montant_DépartColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property MontantColumn() As Global.System.Data.DataColumn
             Get
-                Return Me._columnMontant_Départ
+                Return Me.columnMontant
             End Get
         End Property
         
@@ -1294,9 +1294,9 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPayementRow(ByVal _Montant_Départ As Integer, ByVal Total As Integer) As PayementRow
+        Public Overloads Function AddPayementRow(ByVal Montant As Integer, ByVal Total As Integer) As PayementRow
             Dim rowPayementRow As PayementRow = CType(Me.NewRow,PayementRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, _Montant_Départ, Total}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Montant, Total}
             rowPayementRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPayementRow)
             Return rowPayementRow
@@ -1326,7 +1326,7 @@ Partial Public Class GestionsParkingsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnId_Pay = MyBase.Columns("Id_Pay")
-            Me._columnMontant_Départ = MyBase.Columns("Montant/Départ")
+            Me.columnMontant = MyBase.Columns("Montant")
             Me.columnTotal = MyBase.Columns("Total")
         End Sub
         
@@ -1335,10 +1335,8 @@ Partial Public Class GestionsParkingsDataSet
         Private Sub InitClass()
             Me.columnId_Pay = New Global.System.Data.DataColumn("Id_Pay", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId_Pay)
-            Me._columnMontant_Départ = New Global.System.Data.DataColumn("Montant/Départ", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            Me._columnMontant_Départ.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnMontant_Départ")
-            Me._columnMontant_Départ.ExtendedProperties.Add("Generator_UserColumnName", "Montant/Départ")
-            MyBase.Columns.Add(Me._columnMontant_Départ)
+            Me.columnMontant = New Global.System.Data.DataColumn("Montant", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMontant)
             Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTotal)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_Pay}, true))
@@ -1935,7 +1933,7 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddUtilisateursRow(ByVal Nom As String, ByVal Prénoms As String, ByVal Sexe As String, ByVal Téléphone As String, ByVal Email As String, ByVal Nom_Utilisateur As String, ByVal Mot_de_passe As String) As UtilisateursRow
+        Public Overloads Function AddUtilisateursRow(ByVal Nom As String, ByVal Prénoms As String, ByVal Sexe As String, ByVal Téléphone As Integer, ByVal Email As String, ByVal Nom_Utilisateur As String, ByVal Mot_de_passe As String) As UtilisateursRow
             Dim rowUtilisateursRow As UtilisateursRow = CType(Me.NewRow,UtilisateursRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Nom, Prénoms, Sexe, Téléphone, Email, Nom_Utilisateur, Mot_de_passe}
             rowUtilisateursRow.ItemArray = columnValuesArray
@@ -1987,7 +1985,7 @@ Partial Public Class GestionsParkingsDataSet
             MyBase.Columns.Add(Me.columnPrénoms)
             Me.columnSexe = New Global.System.Data.DataColumn("Sexe", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSexe)
-            Me.columnTéléphone = New Global.System.Data.DataColumn("Téléphone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnTéléphone = New Global.System.Data.DataColumn("Téléphone", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTéléphone)
             Me.columnEmail = New Global.System.Data.DataColumn("Email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEmail)
@@ -2001,13 +1999,12 @@ Partial Public Class GestionsParkingsDataSet
             Me.columnId.AutoIncrementStep = -1
             Me.columnId.AllowDBNull = false
             Me.columnId.Unique = true
-            Me.columnNom.MaxLength = 255
-            Me.columnPrénoms.MaxLength = 255
+            Me.columnNom.MaxLength = 35
+            Me.columnPrénoms.MaxLength = 60
             Me.columnSexe.MaxLength = 1
-            Me.columnTéléphone.MaxLength = 255
-            Me.columnEmail.MaxLength = 255
-            Me.columnNom_Utilisateur.MaxLength = 255
-            Me.columnMot_de_passe.MaxLength = 255
+            Me.columnEmail.MaxLength = 35
+            Me.columnNom_Utilisateur.MaxLength = 10
+            Me.columnMot_de_passe.MaxLength = 10
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2273,8 +2270,8 @@ Partial Public Class GestionsParkingsDataSet
             MyBase.Columns.Add(Me.columnNom_Utilisateur)
             Me.columnMot_de_passe = New Global.System.Data.DataColumn("Mot de passe", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMot_de_passe)
-            Me.columnNom_Utilisateur.MaxLength = 255
-            Me.columnMot_de_passe.MaxLength = 255
+            Me.columnNom_Utilisateur.MaxLength = 10
+            Me.columnMot_de_passe.MaxLength = 10
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2420,7 +2417,7 @@ Partial Public Class GestionsParkingsDataSet
         
         Private columnLibellé As Global.System.Data.DataColumn
         
-        Private _columnMontant_Départ As Global.System.Data.DataColumn
+        Private columnMontant As Global.System.Data.DataColumn
         
         Private columnTotal As Global.System.Data.DataColumn
         
@@ -2493,9 +2490,9 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property _Montant_DépartColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property MontantColumn() As Global.System.Data.DataColumn
             Get
-                Return Me._columnMontant_Départ
+                Return Me.columnMontant
             End Get
         End Property
         
@@ -2544,9 +2541,9 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPayement_RRow(ByVal _N_Matricule As Integer, ByVal Nom As String, ByVal Prénoms As String, ByVal Libellé As String, ByVal _Montant_Départ As Integer, ByVal Total As Integer) As Payement_RRow
+        Public Overloads Function AddPayement_RRow(ByVal _N_Matricule As Short, ByVal Nom As String, ByVal Prénoms As String, ByVal Libellé As String, ByVal Montant As Integer, ByVal Total As Integer) As Payement_RRow
             Dim rowPayement_RRow As Payement_RRow = CType(Me.NewRow,Payement_RRow)
-            Dim columnValuesArray() As Object = New Object() {_N_Matricule, Nom, Prénoms, Libellé, _Montant_Départ, Total}
+            Dim columnValuesArray() As Object = New Object() {_N_Matricule, Nom, Prénoms, Libellé, Montant, Total}
             rowPayement_RRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPayement_RRow)
             Return rowPayement_RRow
@@ -2573,14 +2570,14 @@ Partial Public Class GestionsParkingsDataSet
             Me.columnNom = MyBase.Columns("Nom")
             Me.columnPrénoms = MyBase.Columns("Prénoms")
             Me.columnLibellé = MyBase.Columns("Libellé")
-            Me._columnMontant_Départ = MyBase.Columns("Montant/Départ")
+            Me.columnMontant = MyBase.Columns("Montant")
             Me.columnTotal = MyBase.Columns("Total")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me._columnN_Matricule = New Global.System.Data.DataColumn("N°Matricule", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnN_Matricule = New Global.System.Data.DataColumn("N°Matricule", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             Me._columnN_Matricule.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnN_Matricule")
             Me._columnN_Matricule.ExtendedProperties.Add("Generator_UserColumnName", "N°Matricule")
             MyBase.Columns.Add(Me._columnN_Matricule)
@@ -2590,14 +2587,12 @@ Partial Public Class GestionsParkingsDataSet
             MyBase.Columns.Add(Me.columnPrénoms)
             Me.columnLibellé = New Global.System.Data.DataColumn("Libellé", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLibellé)
-            Me._columnMontant_Départ = New Global.System.Data.DataColumn("Montant/Départ", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            Me._columnMontant_Départ.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnMontant_Départ")
-            Me._columnMontant_Départ.ExtendedProperties.Add("Generator_UserColumnName", "Montant/Départ")
-            MyBase.Columns.Add(Me._columnMontant_Départ)
+            Me.columnMontant = New Global.System.Data.DataColumn("Montant", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMontant)
             Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTotal)
-            Me.columnNom.MaxLength = 255
-            Me.columnPrénoms.MaxLength = 255
+            Me.columnNom.MaxLength = 35
+            Me.columnPrénoms.MaxLength = 60
             Me.columnLibellé.MaxLength = 255
         End Sub
         
@@ -2878,10 +2873,10 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Age() As Integer
+        Public Property Age() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tableClients.AgeColumn),Integer)
+                    Return CType(Me(Me.tableClients.AgeColumn),Short)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Age' in table 'Clients' is DBNull.", e)
                 End Try
@@ -2938,10 +2933,10 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property _N_Matricule() As Integer
+        Public Property _N_Matricule() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tableClients._N_MatriculeColumn),Integer)
+                    Return CType(Me(Me.tableClients._N_MatriculeColumn),Short)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'N°Matricule' in table 'Clients' is DBNull.", e)
                 End Try
@@ -3138,16 +3133,16 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property _Montant_Départ() As Integer
+        Public Property Montant() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePayement._Montant_DépartColumn),Integer)
+                    Return CType(Me(Me.tablePayement.MontantColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Montant/Départ' in table 'Payement' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Montant' in table 'Payement' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePayement._Montant_DépartColumn) = value
+                Me(Me.tablePayement.MontantColumn) = value
             End Set
         End Property
         
@@ -3168,14 +3163,14 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Is_Montant_DépartNull() As Boolean
-            Return Me.IsNull(Me.tablePayement._Montant_DépartColumn)
+        Public Function IsMontantNull() As Boolean
+            Return Me.IsNull(Me.tablePayement.MontantColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Set_Montant_DépartNull()
-            Me(Me.tablePayement._Montant_DépartColumn) = Global.System.Convert.DBNull
+        Public Sub SetMontantNull()
+            Me(Me.tablePayement.MontantColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3345,10 +3340,10 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Téléphone() As String
+        Public Property Téléphone() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableUtilisateurs.TéléphoneColumn),String)
+                    Return CType(Me(Me.tableUtilisateurs.TéléphoneColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Téléphone' in table 'Utilisateurs' is DBNull.", e)
                 End Try
@@ -3575,10 +3570,10 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property _N_Matricule() As Integer
+        Public Property _N_Matricule() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tablePayement_R._N_MatriculeColumn),Integer)
+                    Return CType(Me(Me.tablePayement_R._N_MatriculeColumn),Short)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'N°Matricule' in table 'Payement_R' is DBNull.", e)
                 End Try
@@ -3635,16 +3630,16 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property _Montant_Départ() As Integer
+        Public Property Montant() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePayement_R._Montant_DépartColumn),Integer)
+                    Return CType(Me(Me.tablePayement_R.MontantColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Montant/Départ' in table 'Payement_R' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Montant' in table 'Payement_R' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePayement_R._Montant_DépartColumn) = value
+                Me(Me.tablePayement_R.MontantColumn) = value
             End Set
         End Property
         
@@ -3713,14 +3708,14 @@ Partial Public Class GestionsParkingsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Is_Montant_DépartNull() As Boolean
-            Return Me.IsNull(Me.tablePayement_R._Montant_DépartColumn)
+        Public Function IsMontantNull() As Boolean
+            Return Me.IsNull(Me.tablePayement_R.MontantColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Set_Montant_DépartNull()
-            Me(Me.tablePayement_R._Montant_DépartColumn) = Global.System.Convert.DBNull
+        Public Sub SetMontantNull()
+            Me(Me.tablePayement_R.MontantColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4487,7 +4482,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Prénoms", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Prénoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Age", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Sexe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Tel", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tel", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4495,7 +4490,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Série", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Série", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Série", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Série", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_N°Matricule", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_N°Matricule", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_N°Matricule", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Déchargé", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Déchargé", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Déchargé", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Déchargé", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_N°Vérification", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Vérification", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4507,11 +4502,11 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Prénoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Age", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Tel", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tel", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Série", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Série", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("N°Matricule", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("N°Matricule", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Déchargé", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Déchargé", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("N°Vérification", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Vérification", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
@@ -4528,11 +4523,11 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Prénoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Age", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Tel", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tel", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Série", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Série", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("N°Matricule", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("N°Matricule", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Déchargé", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Déchargé", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("N°Vérification", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Vérification", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id_Cli", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_Cli", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -4541,7 +4536,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Prénoms", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Prénoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Age", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Sexe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Tel", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tel", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4549,7 +4544,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Série", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Série", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Série", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Série", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_N°Matricule", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_N°Matricule", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_N°Matricule", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Matricule", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Déchargé", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Déchargé", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Déchargé", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Déchargé", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_N°Vérification", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "N°Vérification", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4630,62 +4625,42 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id_Cli As Integer, ByVal Original_Nom As String, ByVal Original_Prénoms As String, ByVal Original_Age As Global.System.Nullable(Of Integer), ByVal Original_Sexe As String, ByVal Original_Tel As Global.System.Nullable(Of Integer), ByVal Original_Série As String, ByVal _Original_N_Matricule As Global.System.Nullable(Of Integer), ByVal Original_Déchargé As Boolean, ByVal _Original_N_Vérification As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id_Cli As Integer, ByVal Original_Nom As String, ByVal Original_Prénoms As String, ByVal Original_Age As Short, ByVal Original_Sexe As String, ByVal Original_Tel As Integer, ByVal Original_Série As String, ByVal _Original_N_Matricule As Short, ByVal Original_Déchargé As Boolean, ByVal _Original_N_Vérification As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id_Cli,Integer)
             If (Original_Nom Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Nom")
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Nom,String)
             End If
             If (Original_Prénoms Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Prénoms")
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Prénoms,String)
             End If
-            If (Original_Age.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Age.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Age,Short)
             If (Original_Sexe Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Sexe")
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Sexe,String)
             End If
-            If (Original_Tel.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Tel.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Tel,Integer)
             If (Original_Série Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Série")
             Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Série,String)
             End If
-            If (_Original_N_Matricule.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(_Original_N_Matricule.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(_Original_N_Matricule,Short)
             Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
             Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Déchargé,Boolean)
             If (_Original_N_Vérification Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("_Original_N_Vérification")
             Else
                 Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(18).Value = CType(_Original_N_Vérification,String)
@@ -4709,45 +4684,33 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Nom As String, ByVal Prénoms As String, ByVal Age As Global.System.Nullable(Of Integer), ByVal Sexe As String, ByVal Tel As Global.System.Nullable(Of Integer), ByVal Série As String, ByVal _N_Matricule As Global.System.Nullable(Of Integer), ByVal Déchargé As Boolean, ByVal _N_Vérification As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Nom As String, ByVal Prénoms As String, ByVal Age As Short, ByVal Sexe As String, ByVal Tel As Integer, ByVal Série As String, ByVal _N_Matricule As Short, ByVal Déchargé As Boolean, ByVal _N_Vérification As String) As Integer
             If (Nom Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Nom")
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Nom,String)
             End If
             If (Prénoms Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Prénoms")
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(Prénoms,String)
             End If
-            If (Age.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Age.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(Age,Short)
             If (Sexe Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Sexe")
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(Sexe,String)
             End If
-            If (Tel.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Tel.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(Tel,Integer)
             If (Série Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Série")
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = CType(Série,String)
             End If
-            If (_N_Matricule.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(_N_Matricule.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(_N_Matricule,Short)
             Me.Adapter.InsertCommand.Parameters(7).Value = CType(Déchargé,Boolean)
             If (_N_Vérification Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("_N_Vérification")
             Else
                 Me.Adapter.InsertCommand.Parameters(8).Value = CType(_N_Vérification,String)
             End If
@@ -4773,119 +4736,87 @@ Namespace GestionsParkingsDataSetTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal Nom As String,  _
                     ByVal Prénoms As String,  _
-                    ByVal Age As Global.System.Nullable(Of Integer),  _
+                    ByVal Age As Short,  _
                     ByVal Sexe As String,  _
-                    ByVal Tel As Global.System.Nullable(Of Integer),  _
+                    ByVal Tel As Integer,  _
                     ByVal Série As String,  _
-                    ByVal _N_Matricule As Global.System.Nullable(Of Integer),  _
+                    ByVal _N_Matricule As Short,  _
                     ByVal Déchargé As Boolean,  _
                     ByVal _N_Vérification As String,  _
                     ByVal Original_Id_Cli As Integer,  _
                     ByVal Original_Nom As String,  _
                     ByVal Original_Prénoms As String,  _
-                    ByVal Original_Age As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_Age As Short,  _
                     ByVal Original_Sexe As String,  _
-                    ByVal Original_Tel As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_Tel As Integer,  _
                     ByVal Original_Série As String,  _
-                    ByVal _Original_N_Matricule As Global.System.Nullable(Of Integer),  _
+                    ByVal _Original_N_Matricule As Short,  _
                     ByVal Original_Déchargé As Boolean,  _
                     ByVal _Original_N_Vérification As String) As Integer
             If (Nom Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Nom")
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Nom,String)
             End If
             If (Prénoms Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Prénoms")
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Prénoms,String)
             End If
-            If (Age.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Age.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Age,Short)
             If (Sexe Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Sexe")
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Sexe,String)
             End If
-            If (Tel.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Tel.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Tel,Integer)
             If (Série Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Série")
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Série,String)
             End If
-            If (_N_Matricule.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(_N_Matricule.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(_N_Matricule,Short)
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Déchargé,Boolean)
             If (_N_Vérification Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("_N_Vérification")
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(_N_Vérification,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Id_Cli,Integer)
             If (Original_Nom Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Nom")
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Nom,String)
             End If
             If (Original_Prénoms Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Prénoms")
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Prénoms,String)
             End If
-            If (Original_Age.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Age.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Age,Short)
             If (Original_Sexe Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Sexe")
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Sexe,String)
             End If
-            If (Original_Tel.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Tel.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Tel,Integer)
             If (Original_Série Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Série")
             Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Série,String)
             End If
-            If (_Original_N_Matricule.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(_Original_N_Matricule.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(_Original_N_Matricule,Short)
             Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
             Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Déchargé,Boolean)
             If (_Original_N_Vérification Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("_Original_N_Vérification")
             Else
                 Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(27).Value = CType(_Original_N_Vérification,String)
@@ -5034,37 +4965,36 @@ Namespace GestionsParkingsDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Payement"
             tableMapping.ColumnMappings.Add("Id_Pay", "Id_Pay")
-            tableMapping.ColumnMappings.Add("Montant/Départ", "Montant/Départ")
+            tableMapping.ColumnMappings.Add("Montant", "Montant")
             tableMapping.ColumnMappings.Add("Total", "Total")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Payement` WHERE ((`Id_Pay` = ?) AND ((? = 1 AND `Montant/Départ` IS "& _ 
-                "NULL) OR (`Montant/Départ` = ?)) AND ((? = 1 AND `Total` IS NULL) OR (`Total` = "& _ 
-                "?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Payement` WHERE ((`Id_Pay` = ?) AND ((? = 1 AND `Montant` IS NULL) O"& _ 
+                "R (`Montant` = ?)) AND ((? = 1 AND `Total` IS NULL) OR (`Total` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id_Pay", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_Pay", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Montant/Départ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant/Départ", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Montant/Départ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant/Départ", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Montant", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Montant", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Total", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Total", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Payement` (`Montant/Départ`, `Total`) VALUES (?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Payement` (`Montant`, `Total`) VALUES (?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Montant/Départ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant/Départ", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Montant", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Payement` SET `Montant/Départ` = ?, `Total` = ? WHERE ((`Id_Pay` = ?) AND"& _ 
-                " ((? = 1 AND `Montant/Départ` IS NULL) OR (`Montant/Départ` = ?)) AND ((? = 1 AN"& _ 
-                "D `Total` IS NULL) OR (`Total` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Payement` SET `Montant` = ?, `Total` = ? WHERE ((`Id_Pay` = ?) AND ((? = "& _ 
+                "1 AND `Montant` IS NULL) OR (`Montant` = ?)) AND ((? = 1 AND `Total` IS NULL) OR"& _ 
+                " (`Total` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Montant/Départ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant/Départ", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Montant", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id_Pay", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_Pay", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Montant/Départ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant/Départ", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Montant/Départ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant/Départ", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Montant", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Montant", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Montant", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Total", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Total", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
@@ -5082,7 +5012,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id_Pay, [Montant/Départ], Total FROM Payement"
+            Me._commandCollection(0).CommandText = "SELECT Id_Pay, Montant, Total FROM Payement"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5142,22 +5072,12 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id_Pay As Integer, ByVal _Original_Montant_Départ As Global.System.Nullable(Of Integer), ByVal Original_Total As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id_Pay As Integer, ByVal Original_Montant As Integer, ByVal Original_Total As Integer) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id_Pay,Integer)
-            If (_Original_Montant_Départ.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(_Original_Montant_Départ.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Total.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Total.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Montant,Integer)
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Total,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5177,17 +5097,9 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal _Montant_Départ As Global.System.Nullable(Of Integer), ByVal Total As Global.System.Nullable(Of Integer)) As Integer
-            If (_Montant_Départ.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(_Montant_Départ.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Total.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Total.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
+        Public Overloads Overridable Function Insert(ByVal Montant As Integer, ByVal Total As Integer) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(Montant,Integer)
+            Me.Adapter.InsertCommand.Parameters(1).Value = CType(Total,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5207,32 +5119,14 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal _Montant_Départ As Global.System.Nullable(Of Integer), ByVal Total As Global.System.Nullable(Of Integer), ByVal Original_Id_Pay As Integer, ByVal _Original_Montant_Départ As Global.System.Nullable(Of Integer), ByVal Original_Total As Global.System.Nullable(Of Integer)) As Integer
-            If (_Montant_Départ.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(_Montant_Départ.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Total.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Total.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
+        Public Overloads Overridable Function Update(ByVal Montant As Integer, ByVal Total As Integer, ByVal Original_Id_Pay As Integer, ByVal Original_Montant As Integer, ByVal Original_Total As Integer) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Montant,Integer)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Total,Integer)
             Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_Id_Pay,Integer)
-            If (_Original_Montant_Départ.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(_Original_Montant_Départ.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Total.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Total.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Montant,Integer)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Total,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5706,7 +5600,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Sexe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Téléphone", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Téléphone", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Téléphone", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Email", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Nom_Utilisateur", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom Utilisateur", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -5721,7 +5615,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Prénoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Téléphone", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Téléphone", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom_Utilisateur", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom Utilisateur", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Mot_de_passe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mot de passe", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -5738,7 +5632,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Prénoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prénoms", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Téléphone", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Téléphone", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom_Utilisateur", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom Utilisateur", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Mot_de_passe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Mot de passe", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -5750,7 +5644,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Sexe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Sexe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Sexe", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Téléphone", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Téléphone", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Téléphone", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Téléphone", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Email", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Nom_Utilisateur", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nom Utilisateur", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -5833,53 +5727,42 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Nom As String, ByVal Original_Prénoms As String, ByVal Original_Sexe As String, ByVal Original_Téléphone As String, ByVal Original_Email As String, ByVal Original_Nom_Utilisateur As String, ByVal Original_Mot_de_passe As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Nom As String, ByVal Original_Prénoms As String, ByVal Original_Sexe As String, ByVal Original_Téléphone As Integer, ByVal Original_Email As String, ByVal Original_Nom_Utilisateur As String, ByVal Original_Mot_de_passe As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_Nom Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Nom")
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Nom,String)
             End If
             If (Original_Prénoms Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Prénoms")
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Prénoms,String)
             End If
             If (Original_Sexe Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Sexe")
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Sexe,String)
             End If
-            If (Original_Téléphone Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Téléphone,String)
-            End If
+            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Téléphone,Integer)
             If (Original_Email Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Email")
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Email,String)
             End If
             If (Original_Nom_Utilisateur Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Nom_Utilisateur")
             Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Nom_Utilisateur,String)
             End If
             If (Original_Mot_de_passe Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Mot_de_passe")
             Else
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Mot_de_passe,String)
@@ -5903,39 +5786,35 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Nom As String, ByVal Prénoms As String, ByVal Sexe As String, ByVal Téléphone As String, ByVal Email As String, ByVal Nom_Utilisateur As String, ByVal Mot_de_passe As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Nom As String, ByVal Prénoms As String, ByVal Sexe As String, ByVal Téléphone As Integer, ByVal Email As String, ByVal Nom_Utilisateur As String, ByVal Mot_de_passe As String) As Integer
             If (Nom Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Nom")
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Nom,String)
             End If
             If (Prénoms Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Prénoms")
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(Prénoms,String)
             End If
             If (Sexe Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Sexe")
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(Sexe,String)
             End If
-            If (Téléphone Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Téléphone,String)
-            End If
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(Téléphone,Integer)
             If (Email Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Email")
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(Email,String)
             End If
             If (Nom_Utilisateur Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Nom_Utilisateur")
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = CType(Nom_Utilisateur,String)
             End If
             If (Mot_de_passe Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Mot_de_passe")
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(Mot_de_passe,String)
             End If
@@ -5958,88 +5837,73 @@ Namespace GestionsParkingsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Nom As String, ByVal Prénoms As String, ByVal Sexe As String, ByVal Téléphone As String, ByVal Email As String, ByVal Nom_Utilisateur As String, ByVal Mot_de_passe As String, ByVal Original_Id As Integer, ByVal Original_Nom As String, ByVal Original_Prénoms As String, ByVal Original_Sexe As String, ByVal Original_Téléphone As String, ByVal Original_Email As String, ByVal Original_Nom_Utilisateur As String, ByVal Original_Mot_de_passe As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Nom As String, ByVal Prénoms As String, ByVal Sexe As String, ByVal Téléphone As Integer, ByVal Email As String, ByVal Nom_Utilisateur As String, ByVal Mot_de_passe As String, ByVal Original_Id As Integer, ByVal Original_Nom As String, ByVal Original_Prénoms As String, ByVal Original_Sexe As String, ByVal Original_Téléphone As Integer, ByVal Original_Email As String, ByVal Original_Nom_Utilisateur As String, ByVal Original_Mot_de_passe As String) As Integer
             If (Nom Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Nom")
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Nom,String)
             End If
             If (Prénoms Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Prénoms")
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Prénoms,String)
             End If
             If (Sexe Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Sexe")
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Sexe,String)
             End If
-            If (Téléphone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Téléphone,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Téléphone,Integer)
             If (Email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Email")
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Email,String)
             End If
             If (Nom_Utilisateur Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Nom_Utilisateur")
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Nom_Utilisateur,String)
             End If
             If (Mot_de_passe Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Mot_de_passe")
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Mot_de_passe,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Id,Integer)
             If (Original_Nom Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Nom")
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Nom,String)
             End If
             If (Original_Prénoms Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Prénoms")
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Prénoms,String)
             End If
             If (Original_Sexe Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Sexe")
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Sexe,String)
             End If
-            If (Original_Téléphone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Téléphone,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Téléphone,Integer)
             If (Original_Email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Email")
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Email,String)
             End If
             If (Original_Nom_Utilisateur Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Nom_Utilisateur")
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Nom_Utilisateur,String)
             End If
             If (Original_Mot_de_passe Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_Mot_de_passe")
             Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Mot_de_passe,String)
@@ -6365,7 +6229,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Nom", "Nom")
             tableMapping.ColumnMappings.Add("Prénoms", "Prénoms")
             tableMapping.ColumnMappings.Add("Libellé", "Libellé")
-            tableMapping.ColumnMappings.Add("Montant/Départ", "Montant/Départ")
+            tableMapping.ColumnMappings.Add("Montant", "Montant")
             tableMapping.ColumnMappings.Add("Total", "Total")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
@@ -6383,8 +6247,7 @@ Namespace GestionsParkingsDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT [N°Matricule], Nom, Prénoms, Libellé, [Montant/Départ], Total FROM Payemen"& _ 
-                "t_R"
+            Me._commandCollection(0).CommandText = "SELECT [N°Matricule], Nom, Prénoms, Libellé, Montant, Total FROM Payement_R"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

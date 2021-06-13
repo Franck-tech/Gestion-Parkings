@@ -17,6 +17,7 @@ Public Class Form3
 
     End Sub
 
+
     Private Sub Form3_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
         Dim Confirmation As DialogResult = MessageBox.Show("Voulez vous vraiment quitter ?", "Fermer", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -33,7 +34,7 @@ Public Class Form3
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         connection.Open()
         Try
-            ClientsBindingSource.EndEdit()
+            ClientsBindingSource1.EndEdit()
             ClientsTableAdapter.Update(GestionsParkingsDataSet.Clients)
             MessageBox.Show("Sauvegarde reussie")
             Id_CliTextBox.Clear()
@@ -49,6 +50,10 @@ Public Class Form3
         Catch ex As Exception
             MessageBox.Show("Echec de sauvegarde")
         End Try
+
+        If (DéchargéCheckBox().Checked And MessageBox.Show("Sauvegarde reussie")) Then
+            Form5.Show()
+        End If
         connection.Close()
     End Sub
 
@@ -57,36 +62,36 @@ Public Class Form3
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ClientsBindingSource.MovePrevious()
+        ClientsBindingSource1.MovePrevious()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-        ClientsBindingSource.AddNew()
+        ClientsBindingSource1.AddNew()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        ClientsBindingSource.MoveNext()
+        ClientsBindingSource1.MoveNext()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         MsgBox("Voulez vous vraiment supprimer ?", MsgBoxStyle.YesNo)
         If MsgBoxResult.Yes Then
-            ClientsBindingSource.RemoveCurrent()
+            ClientsBindingSource1.RemoveCurrent()
         Else
             DataGridView1.Show()
         End If
     End Sub
 
-    Private Sub Id_CliTextBox_TextChanged(sender As Object, e As EventArgs) Handles Id_CliTextBox.TextChanged
+    Private Sub Id_CliTextBox_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
     Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
 
-        If ClientsBindingSource.Count <> 0 Then
+        If ClientsBindingSource1.Count <> 0 Then
             With DataGridView1
-                .DataSource = ClientsBindingSource.Filter
+                .DataSource = ClientsBindingSource1.Filter
             End With
 
         Else
@@ -109,21 +114,36 @@ Public Class Form3
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
-        index = e.RowIndex
+
 
         Dim selectedrow As DataGridViewRow
 
-        selectedrow = DataGridView1.Rows(index)
-        Id_CliTextBox.text = selectedrow.Cells(0).Value.ToString
-        NomTextBox.text = selectedrow.Cells(1).Value.ToString
-        PrénomsTextBox.text = selectedrow.Cells(2).Value.ToString
-        AgeTextBox.text = selectedrow.Cells(3).Value.ToString
-        SexeTextBox.text = selectedrow.Cells(4).Value.ToString
-        SérieTextBox.text = selectedrow.Cells(5).Value.ToString
-        N_MatriculeTextBox.text = selectedrow.Cells(6).Value.ToString
-        N_VérificationTextBox.text = selectedrow.Cells(7).Value.ToString
 
 
+
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+        Dim newData As DataGridViewRow
+        Dim index = e.ToString
+
+        newData = DataGridView1.Rows(index)
+
+        newData.Cells(0).Value = Id_CliTextBox.Text
+        newData.Cells(1).Value = NomTextBox.Text
+        newData.Cells(2).Value = PrénomsTextBox.Text
+        newData.Cells(3).Value = AgeTextBox.Text
+        newData.Cells(4).Value.Text
+        newData.Cells(0).Value = TelTextBox.Text
+        newData.Cells(5).Value = SérieTextBox.Text
+        newData.Cells(6).Value = N_MatriculeTextBox.Text
+        newData.Cells(7).Value = N_VérificationTextBox.Text
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
 End Class

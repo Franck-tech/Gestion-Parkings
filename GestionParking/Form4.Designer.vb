@@ -33,7 +33,7 @@ Partial Class Form4
         Dim Mot_de_passeLabel As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
-        Me.UtilisateursBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UtilisateursBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GestionsParkingsDataSet = New GestionParking.GestionsParkingsDataSet()
         Me.NomTextBox = New System.Windows.Forms.TextBox()
         Me.PrénomsTextBox = New System.Windows.Forms.TextBox()
@@ -72,7 +72,7 @@ Partial Class Form4
         Nom_UtilisateurLabel = New System.Windows.Forms.Label()
         Mot_de_passeLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.UtilisateursBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UtilisateursBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GestionsParkingsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,39 +80,48 @@ Partial Class Form4
         '
         'IdLabel
         '
-        IdLabel.Location = New System.Drawing.Point(61, 70)
+        IdLabel.AutoSize = True
+        IdLabel.Location = New System.Drawing.Point(31, 37)
         IdLabel.Name = "IdLabel"
         IdLabel.Size = New System.Drawing.Size(27, 17)
         IdLabel.TabIndex = 16
         IdLabel.Text = "Id:"
+        AddHandler IdLabel.Click, AddressOf Me.IdLabel_Click
         '
         'NomLabel
         '
-        NomLabel.Location = New System.Drawing.Point(61, 100)
+        NomLabel.AutoSize = True
+        NomLabel.Location = New System.Drawing.Point(31, 67)
         NomLabel.Name = "NomLabel"
         NomLabel.Size = New System.Drawing.Size(43, 17)
         NomLabel.TabIndex = 18
         NomLabel.Text = "Nom:"
+        AddHandler NomLabel.Click, AddressOf Me.NomLabel_Click
         '
         'PrénomsLabel
         '
-        PrénomsLabel.Location = New System.Drawing.Point(61, 130)
+        PrénomsLabel.AutoSize = True
+        PrénomsLabel.Location = New System.Drawing.Point(31, 97)
         PrénomsLabel.Name = "PrénomsLabel"
         PrénomsLabel.Size = New System.Drawing.Size(70, 17)
         PrénomsLabel.TabIndex = 20
         PrénomsLabel.Text = "Prénoms:"
+        AddHandler PrénomsLabel.Click, AddressOf Me.PrénomsLabel_Click
         '
         'SexeLabel
         '
-        SexeLabel.Location = New System.Drawing.Point(61, 160)
+        SexeLabel.AutoSize = True
+        SexeLabel.Location = New System.Drawing.Point(31, 127)
         SexeLabel.Name = "SexeLabel"
         SexeLabel.Size = New System.Drawing.Size(42, 17)
         SexeLabel.TabIndex = 22
         SexeLabel.Text = "Sexe:"
+        AddHandler SexeLabel.Click, AddressOf Me.SexeLabel_Click
         '
         'TéléphoneLabel
         '
-        TéléphoneLabel.Location = New System.Drawing.Point(61, 190)
+        TéléphoneLabel.AutoSize = True
+        TéléphoneLabel.Location = New System.Drawing.Point(31, 157)
         TéléphoneLabel.Name = "TéléphoneLabel"
         TéléphoneLabel.Size = New System.Drawing.Size(78, 17)
         TéléphoneLabel.TabIndex = 24
@@ -120,7 +129,8 @@ Partial Class Form4
         '
         'EmailLabel
         '
-        EmailLabel.Location = New System.Drawing.Point(61, 220)
+        EmailLabel.AutoSize = True
+        EmailLabel.Location = New System.Drawing.Point(31, 187)
         EmailLabel.Name = "EmailLabel"
         EmailLabel.Size = New System.Drawing.Size(50, 17)
         EmailLabel.TabIndex = 26
@@ -128,7 +138,8 @@ Partial Class Form4
         '
         'Nom_UtilisateurLabel
         '
-        Nom_UtilisateurLabel.Location = New System.Drawing.Point(61, 250)
+        Nom_UtilisateurLabel.AutoSize = True
+        Nom_UtilisateurLabel.Location = New System.Drawing.Point(31, 217)
         Nom_UtilisateurLabel.Name = "Nom_UtilisateurLabel"
         Nom_UtilisateurLabel.Size = New System.Drawing.Size(114, 17)
         Nom_UtilisateurLabel.TabIndex = 28
@@ -136,7 +147,8 @@ Partial Class Form4
         '
         'Mot_de_passeLabel
         '
-        Mot_de_passeLabel.Location = New System.Drawing.Point(61, 280)
+        Mot_de_passeLabel.AutoSize = True
+        Mot_de_passeLabel.Location = New System.Drawing.Point(31, 247)
         Mot_de_passeLabel.Name = "Mot_de_passeLabel"
         Mot_de_passeLabel.Size = New System.Drawing.Size(93, 17)
         Mot_de_passeLabel.TabIndex = 30
@@ -166,26 +178,26 @@ Partial Class Form4
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Font = New System.Drawing.Font("Elephant", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 76)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 102)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(531, 430)
+        Me.GroupBox1.Size = New System.Drawing.Size(438, 342)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enregistrement Utilisateur"
         '
         'IdTextBox
         '
-        Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Id", True))
-        Me.IdTextBox.Location = New System.Drawing.Point(211, 67)
+        Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Id", True))
+        Me.IdTextBox.Location = New System.Drawing.Point(151, 34)
         Me.IdTextBox.Name = "IdTextBox"
-        Me.IdTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.IdTextBox.Size = New System.Drawing.Size(265, 24)
         Me.IdTextBox.TabIndex = 17
         Me.IdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'UtilisateursBindingSource
+        'UtilisateursBindingSource1
         '
-        Me.UtilisateursBindingSource.DataMember = "Utilisateurs"
-        Me.UtilisateursBindingSource.DataSource = Me.GestionsParkingsDataSet
+        Me.UtilisateursBindingSource1.DataMember = "Utilisateurs"
+        Me.UtilisateursBindingSource1.DataSource = Me.GestionsParkingsDataSet
         '
         'GestionsParkingsDataSet
         '
@@ -194,64 +206,64 @@ Partial Class Form4
         '
         'NomTextBox
         '
-        Me.NomTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Nom", True))
-        Me.NomTextBox.Location = New System.Drawing.Point(211, 97)
+        Me.NomTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Nom", True))
+        Me.NomTextBox.Location = New System.Drawing.Point(151, 64)
         Me.NomTextBox.Name = "NomTextBox"
-        Me.NomTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.NomTextBox.Size = New System.Drawing.Size(265, 24)
         Me.NomTextBox.TabIndex = 19
         Me.NomTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PrénomsTextBox
         '
-        Me.PrénomsTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Prénoms", True))
-        Me.PrénomsTextBox.Location = New System.Drawing.Point(211, 127)
+        Me.PrénomsTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Prénoms", True))
+        Me.PrénomsTextBox.Location = New System.Drawing.Point(151, 94)
         Me.PrénomsTextBox.Name = "PrénomsTextBox"
-        Me.PrénomsTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.PrénomsTextBox.Size = New System.Drawing.Size(265, 24)
         Me.PrénomsTextBox.TabIndex = 21
         Me.PrénomsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SexeTextBox
         '
-        Me.SexeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Sexe", True))
-        Me.SexeTextBox.Location = New System.Drawing.Point(211, 157)
+        Me.SexeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Sexe", True))
+        Me.SexeTextBox.Location = New System.Drawing.Point(151, 124)
         Me.SexeTextBox.Name = "SexeTextBox"
-        Me.SexeTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.SexeTextBox.Size = New System.Drawing.Size(265, 24)
         Me.SexeTextBox.TabIndex = 23
         Me.SexeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TéléphoneTextBox
         '
-        Me.TéléphoneTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Téléphone", True))
-        Me.TéléphoneTextBox.Location = New System.Drawing.Point(211, 187)
+        Me.TéléphoneTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Téléphone", True))
+        Me.TéléphoneTextBox.Location = New System.Drawing.Point(151, 154)
         Me.TéléphoneTextBox.Name = "TéléphoneTextBox"
-        Me.TéléphoneTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.TéléphoneTextBox.Size = New System.Drawing.Size(265, 24)
         Me.TéléphoneTextBox.TabIndex = 25
         Me.TéléphoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'EmailTextBox
         '
-        Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(211, 217)
+        Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Email", True))
+        Me.EmailTextBox.Location = New System.Drawing.Point(151, 184)
         Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.EmailTextBox.Size = New System.Drawing.Size(265, 24)
         Me.EmailTextBox.TabIndex = 27
         Me.EmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Nom_UtilisateurTextBox
         '
-        Me.Nom_UtilisateurTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Nom Utilisateur", True))
-        Me.Nom_UtilisateurTextBox.Location = New System.Drawing.Point(211, 247)
+        Me.Nom_UtilisateurTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Nom Utilisateur", True))
+        Me.Nom_UtilisateurTextBox.Location = New System.Drawing.Point(151, 214)
         Me.Nom_UtilisateurTextBox.Name = "Nom_UtilisateurTextBox"
-        Me.Nom_UtilisateurTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.Nom_UtilisateurTextBox.Size = New System.Drawing.Size(265, 24)
         Me.Nom_UtilisateurTextBox.TabIndex = 29
         Me.Nom_UtilisateurTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Mot_de_passeTextBox
         '
-        Me.Mot_de_passeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource, "Mot de passe", True))
-        Me.Mot_de_passeTextBox.Location = New System.Drawing.Point(211, 277)
+        Me.Mot_de_passeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UtilisateursBindingSource1, "Mot de passe", True))
+        Me.Mot_de_passeTextBox.Location = New System.Drawing.Point(151, 244)
         Me.Mot_de_passeTextBox.Name = "Mot_de_passeTextBox"
-        Me.Mot_de_passeTextBox.Size = New System.Drawing.Size(289, 24)
+        Me.Mot_de_passeTextBox.Size = New System.Drawing.Size(265, 24)
         Me.Mot_de_passeTextBox.TabIndex = 31
         Me.Mot_de_passeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -259,9 +271,9 @@ Partial Class Form4
         '
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button1.Image = Global.GestionParking.My.Resources.Resources.follow__1_
-        Me.Button1.Location = New System.Drawing.Point(10, 374)
+        Me.Button1.Location = New System.Drawing.Point(8, 286)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 31)
+        Me.Button1.Size = New System.Drawing.Size(83, 31)
         Me.Button1.TabIndex = 16
         Me.Button1.Text = "Ajouter"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -271,9 +283,9 @@ Partial Class Form4
         '
         Me.Button5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button5.Image = Global.GestionParking.My.Resources.Resources.diskette__1_
-        Me.Button5.Location = New System.Drawing.Point(151, 374)
+        Me.Button5.Location = New System.Drawing.Point(97, 286)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(124, 31)
+        Me.Button5.Size = New System.Drawing.Size(116, 31)
         Me.Button5.TabIndex = 15
         Me.Button5.Text = "Sauvegarder"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -283,9 +295,9 @@ Partial Class Form4
         '
         Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button4.Image = Global.GestionParking.My.Resources.Resources.delete
-        Me.Button4.Location = New System.Drawing.Point(406, 374)
+        Me.Button4.Location = New System.Drawing.Point(318, 287)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(105, 31)
+        Me.Button4.Size = New System.Drawing.Size(109, 31)
         Me.Button4.TabIndex = 6
         Me.Button4.Text = "Supprimer"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -294,9 +306,9 @@ Partial Class Form4
         'Button2
         '
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button2.Location = New System.Drawing.Point(295, 374)
+        Me.Button2.Location = New System.Drawing.Point(219, 286)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(105, 32)
+        Me.Button2.Size = New System.Drawing.Size(93, 32)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Modifier"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -308,9 +320,9 @@ Partial Class Form4
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Font = New System.Drawing.Font("Elephant", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.GroupBox2.Location = New System.Drawing.Point(529, 76)
+        Me.GroupBox2.Location = New System.Drawing.Point(456, 102)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(618, 430)
+        Me.GroupBox2.Size = New System.Drawing.Size(485, 342)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Liste Utilisateur"
@@ -320,10 +332,10 @@ Partial Class Form4
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NomDataGridViewTextBoxColumn, Me.PrénomsDataGridViewTextBoxColumn, Me.SexeDataGridViewTextBoxColumn, Me.TéléphoneDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.NomUtilisateurDataGridViewTextBoxColumn, Me.MotDePasseDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.UtilisateursBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 51)
+        Me.DataGridView1.DataSource = Me.UtilisateursBindingSource1
+        Me.DataGridView1.Location = New System.Drawing.Point(4, 51)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(608, 373)
+        Me.DataGridView1.Size = New System.Drawing.Size(474, 266)
         Me.DataGridView1.TabIndex = 0
         '
         'IdDataGridViewTextBoxColumn
@@ -378,7 +390,7 @@ Partial Class Form4
         '
         Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button3.Image = Global.GestionParking.My.Resources.Resources.printer__1_
-        Me.Button3.Location = New System.Drawing.Point(508, 13)
+        Me.Button3.Location = New System.Drawing.Point(379, 13)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(100, 32)
         Me.Button3.TabIndex = 5
@@ -390,7 +402,7 @@ Partial Class Form4
         '
         Me.Label1.Font = New System.Drawing.Font("Elephant", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(217, 28)
+        Me.Label1.Location = New System.Drawing.Point(40, 26)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(676, 38)
         Me.Label1.TabIndex = 2
@@ -399,16 +411,16 @@ Partial Class Form4
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(918, 39)
+        Me.TextBox9.Location = New System.Drawing.Point(768, 45)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(205, 20)
+        Me.TextBox9.Size = New System.Drawing.Size(145, 20)
         Me.TextBox9.TabIndex = 12
         '
         'Label10
         '
         Me.Label10.Font = New System.Drawing.Font("Elephant", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(826, 39)
+        Me.Label10.Location = New System.Drawing.Point(676, 46)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(86, 19)
         Me.Label10.TabIndex = 13
@@ -425,7 +437,7 @@ Partial Class Form4
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.Image = Global.GestionParking.My.Resources.Resources.funnel__1_
-        Me.Button7.Location = New System.Drawing.Point(1106, 28)
+        Me.Button7.Location = New System.Drawing.Point(899, 38)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(56, 45)
         Me.Button7.TabIndex = 11
@@ -446,8 +458,8 @@ Partial Class Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.RoyalBlue
-        Me.ClientSize = New System.Drawing.Size(1174, 573)
+        Me.BackColor = System.Drawing.Color.MidnightBlue
+        Me.ClientSize = New System.Drawing.Size(953, 495)
         Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Button7)
@@ -458,10 +470,9 @@ Partial Class Form4
         Me.Name = "Form4"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form4"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.UtilisateursBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UtilisateursBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GestionsParkingsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -482,9 +493,18 @@ Partial Class Form4
     Friend WithEvents Label10 As Label
     Friend WithEvents Button7 As Button
     Friend WithEvents GestionsParkingsDataSet As GestionsParkingsDataSet
-    Friend WithEvents UtilisateursBindingSource As BindingSource
     Friend WithEvents UtilisateursTableAdapter As GestionsParkingsDataSetTableAdapters.UtilisateursTableAdapter
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents TableAdapterManager As GestionsParkingsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents IdTextBox As TextBox
+    Friend WithEvents UtilisateursBindingSource1 As BindingSource
+    Friend WithEvents NomTextBox As TextBox
+    Friend WithEvents PrénomsTextBox As TextBox
+    Friend WithEvents SexeTextBox As TextBox
+    Friend WithEvents TéléphoneTextBox As TextBox
+    Friend WithEvents EmailTextBox As TextBox
+    Friend WithEvents Nom_UtilisateurTextBox As TextBox
+    Friend WithEvents Mot_de_passeTextBox As TextBox
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrénomsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -493,13 +513,4 @@ Partial Class Form4
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomUtilisateurDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MotDePasseDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdTextBox As TextBox
-    Friend WithEvents NomTextBox As TextBox
-    Friend WithEvents PrénomsTextBox As TextBox
-    Friend WithEvents SexeTextBox As TextBox
-    Friend WithEvents TéléphoneTextBox As TextBox
-    Friend WithEvents EmailTextBox As TextBox
-    Friend WithEvents Nom_UtilisateurTextBox As TextBox
-    Friend WithEvents Mot_de_passeTextBox As TextBox
-    Friend WithEvents TableAdapterManager As GestionsParkingsDataSetTableAdapters.TableAdapterManager
 End Class

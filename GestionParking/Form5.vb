@@ -8,4 +8,24 @@ Public Class Form5
         Me.Payement_RTableAdapter.Fill(Me.GestionsParkingsDataSet.Payement_R)
 
     End Sub
+
+    Private Sub TotalTextBox_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub N_MatriculeLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub N_MatriculeTextBox_TextChanged(sender As Object, e As EventArgs) Handles N_MatriculeTextBox.TextChanged
+
+    End Sub
+
+    Private Sub NomLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub NomTextBox_TextChanged(sender As Object, e As EventArgs) Handles NomTextBox.TextChanged
+
+    End Sub
 End Class

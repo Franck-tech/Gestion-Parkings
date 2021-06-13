@@ -34,18 +34,7 @@ Partial Class Form3
         Dim DéchargéLabel As System.Windows.Forms.Label
         Dim N_VérificationLabel As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Id_CliTextBox = New System.Windows.Forms.TextBox()
-        Me.ClientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GestionsParkingsDataSet = New GestionParking.GestionsParkingsDataSet()
-        Me.NomTextBox = New System.Windows.Forms.TextBox()
-        Me.PrénomsTextBox = New System.Windows.Forms.TextBox()
-        Me.AgeTextBox = New System.Windows.Forms.TextBox()
-        Me.SexeTextBox = New System.Windows.Forms.TextBox()
-        Me.TelTextBox = New System.Windows.Forms.TextBox()
-        Me.SérieTextBox = New System.Windows.Forms.TextBox()
-        Me.N_MatriculeTextBox = New System.Windows.Forms.TextBox()
-        Me.DéchargéCheckBox = New System.Windows.Forms.CheckBox()
-        Me.N_VérificationTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IdCliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -72,6 +61,17 @@ Partial Class Form3
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.ClientsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Id_CliTextBox = New System.Windows.Forms.TextBox()
+        Me.NomTextBox = New System.Windows.Forms.TextBox()
+        Me.PrénomsTextBox = New System.Windows.Forms.TextBox()
+        Me.AgeTextBox = New System.Windows.Forms.TextBox()
+        Me.SexeTextBox = New System.Windows.Forms.TextBox()
+        Me.TelTextBox = New System.Windows.Forms.TextBox()
+        Me.SérieTextBox = New System.Windows.Forms.TextBox()
+        Me.N_MatriculeTextBox = New System.Windows.Forms.TextBox()
+        Me.DéchargéCheckBox = New System.Windows.Forms.CheckBox()
+        Me.N_VérificationTextBox = New System.Windows.Forms.TextBox()
         Id_CliLabel = New System.Windows.Forms.Label()
         NomLabel = New System.Windows.Forms.Label()
         PrénomsLabel = New System.Windows.Forms.Label()
@@ -83,91 +83,11 @@ Partial Class Form3
         DéchargéLabel = New System.Windows.Forms.Label()
         N_VérificationLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.ClientsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GestionsParkingsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClientsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Id_CliLabel
-        '
-        Id_CliLabel.Location = New System.Drawing.Point(49, 58)
-        Id_CliLabel.Name = "Id_CliLabel"
-        Id_CliLabel.Size = New System.Drawing.Size(101, 21)
-        Id_CliLabel.TabIndex = 0
-        Id_CliLabel.Text = "Id Cli:"
-        '
-        'NomLabel
-        '
-        NomLabel.Location = New System.Drawing.Point(49, 88)
-        NomLabel.Name = "NomLabel"
-        NomLabel.Size = New System.Drawing.Size(96, 21)
-        NomLabel.TabIndex = 2
-        NomLabel.Text = "Nom:"
-        '
-        'PrénomsLabel
-        '
-        PrénomsLabel.Location = New System.Drawing.Point(49, 118)
-        PrénomsLabel.Name = "PrénomsLabel"
-        PrénomsLabel.Size = New System.Drawing.Size(123, 21)
-        PrénomsLabel.TabIndex = 4
-        PrénomsLabel.Text = "Prénoms:"
-        '
-        'AgeLabel
-        '
-        AgeLabel.Location = New System.Drawing.Point(49, 148)
-        AgeLabel.Name = "AgeLabel"
-        AgeLabel.Size = New System.Drawing.Size(89, 21)
-        AgeLabel.TabIndex = 6
-        AgeLabel.Text = "Age:"
-        '
-        'SexeLabel
-        '
-        SexeLabel.Location = New System.Drawing.Point(49, 178)
-        SexeLabel.Name = "SexeLabel"
-        SexeLabel.Size = New System.Drawing.Size(95, 21)
-        SexeLabel.TabIndex = 8
-        SexeLabel.Text = "Sexe:"
-        '
-        'TelLabel
-        '
-        TelLabel.Location = New System.Drawing.Point(49, 208)
-        TelLabel.Name = "TelLabel"
-        TelLabel.Size = New System.Drawing.Size(86, 21)
-        TelLabel.TabIndex = 10
-        TelLabel.Text = "Tel:"
-        '
-        'SérieLabel
-        '
-        SérieLabel.Location = New System.Drawing.Point(49, 238)
-        SérieLabel.Name = "SérieLabel"
-        SérieLabel.Size = New System.Drawing.Size(99, 21)
-        SérieLabel.TabIndex = 12
-        SérieLabel.Text = "Série:"
-        '
-        'N_MatriculeLabel
-        '
-        N_MatriculeLabel.Location = New System.Drawing.Point(49, 268)
-        N_MatriculeLabel.Name = "N_MatriculeLabel"
-        N_MatriculeLabel.Size = New System.Drawing.Size(127, 21)
-        N_MatriculeLabel.TabIndex = 14
-        N_MatriculeLabel.Text = "N°Matricule:"
-        '
-        'DéchargéLabel
-        '
-        DéchargéLabel.Location = New System.Drawing.Point(49, 300)
-        DéchargéLabel.Name = "DéchargéLabel"
-        DéchargéLabel.Size = New System.Drawing.Size(127, 21)
-        DéchargéLabel.TabIndex = 16
-        DéchargéLabel.Text = "Déchargé:"
-        '
-        'N_VérificationLabel
-        '
-        N_VérificationLabel.Location = New System.Drawing.Point(49, 328)
-        N_VérificationLabel.Name = "N_VérificationLabel"
-        N_VérificationLabel.Size = New System.Drawing.Size(115, 21)
-        N_VérificationLabel.TabIndex = 18
-        N_VérificationLabel.Text = "N°Vérification:"
         '
         'GroupBox1
         '
@@ -195,111 +115,24 @@ Partial Class Form3
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.GroupBox1.Location = New System.Drawing.Point(12, 69)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(431, 392)
+        Me.GroupBox1.Size = New System.Drawing.Size(349, 333)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enregregistrement"
-        '
-        'Id_CliTextBox
-        '
-        Me.Id_CliTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "Id_Cli", True))
-        Me.Id_CliTextBox.Location = New System.Drawing.Point(184, 55)
-        Me.Id_CliTextBox.Name = "Id_CliTextBox"
-        Me.Id_CliTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.Id_CliTextBox.TabIndex = 1
-        '
-        'ClientsBindingSource
-        '
-        Me.ClientsBindingSource.DataMember = "Clients"
-        Me.ClientsBindingSource.DataSource = Me.GestionsParkingsDataSet
         '
         'GestionsParkingsDataSet
         '
         Me.GestionsParkingsDataSet.DataSetName = "GestionsParkingsDataSet"
         Me.GestionsParkingsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'NomTextBox
-        '
-        Me.NomTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "Nom", True))
-        Me.NomTextBox.Location = New System.Drawing.Point(184, 85)
-        Me.NomTextBox.Name = "NomTextBox"
-        Me.NomTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.NomTextBox.TabIndex = 3
-        '
-        'PrénomsTextBox
-        '
-        Me.PrénomsTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "Prénoms", True))
-        Me.PrénomsTextBox.Location = New System.Drawing.Point(184, 115)
-        Me.PrénomsTextBox.Name = "PrénomsTextBox"
-        Me.PrénomsTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.PrénomsTextBox.TabIndex = 5
-        '
-        'AgeTextBox
-        '
-        Me.AgeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "Age", True))
-        Me.AgeTextBox.Location = New System.Drawing.Point(184, 145)
-        Me.AgeTextBox.Name = "AgeTextBox"
-        Me.AgeTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.AgeTextBox.TabIndex = 7
-        '
-        'SexeTextBox
-        '
-        Me.SexeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "Sexe", True))
-        Me.SexeTextBox.Location = New System.Drawing.Point(184, 175)
-        Me.SexeTextBox.Name = "SexeTextBox"
-        Me.SexeTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.SexeTextBox.TabIndex = 9
-        '
-        'TelTextBox
-        '
-        Me.TelTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "Tel", True))
-        Me.TelTextBox.Location = New System.Drawing.Point(184, 205)
-        Me.TelTextBox.Name = "TelTextBox"
-        Me.TelTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.TelTextBox.TabIndex = 11
-        '
-        'SérieTextBox
-        '
-        Me.SérieTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "Série", True))
-        Me.SérieTextBox.Location = New System.Drawing.Point(184, 235)
-        Me.SérieTextBox.Name = "SérieTextBox"
-        Me.SérieTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.SérieTextBox.TabIndex = 13
-        '
-        'N_MatriculeTextBox
-        '
-        Me.N_MatriculeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "N°Matricule", True))
-        Me.N_MatriculeTextBox.Location = New System.Drawing.Point(184, 265)
-        Me.N_MatriculeTextBox.Name = "N_MatriculeTextBox"
-        Me.N_MatriculeTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.N_MatriculeTextBox.TabIndex = 15
-        '
-        'DéchargéCheckBox
-        '
-        Me.DéchargéCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.ClientsBindingSource, "Déchargé", True))
-        Me.DéchargéCheckBox.Location = New System.Drawing.Point(184, 295)
-        Me.DéchargéCheckBox.Name = "DéchargéCheckBox"
-        Me.DéchargéCheckBox.Size = New System.Drawing.Size(104, 24)
-        Me.DéchargéCheckBox.TabIndex = 17
-        Me.DéchargéCheckBox.Text = "CheckBox1"
-        Me.DéchargéCheckBox.UseVisualStyleBackColor = True
-        '
-        'N_VérificationTextBox
-        '
-        Me.N_VérificationTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource, "N°Vérification", True))
-        Me.N_VérificationTextBox.Location = New System.Drawing.Point(184, 325)
-        Me.N_VérificationTextBox.Name = "N_VérificationTextBox"
-        Me.N_VérificationTextBox.Size = New System.Drawing.Size(217, 24)
-        Me.N_VérificationTextBox.TabIndex = 19
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Font = New System.Drawing.Font("Elephant", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.GroupBox2.Location = New System.Drawing.Point(443, 69)
+        Me.GroupBox2.Location = New System.Drawing.Point(367, 69)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(705, 392)
+        Me.GroupBox2.Size = New System.Drawing.Size(568, 333)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Liste Personnel"
@@ -309,10 +142,10 @@ Partial Class Form3
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCliDataGridViewTextBoxColumn, Me.NomDataGridViewTextBoxColumn, Me.PrénomsDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.SexeDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.SérieDataGridViewTextBoxColumn, Me.NMatriculeDataGridViewTextBoxColumn, Me.DéchargéDataGridViewCheckBoxColumn, Me.NVérificationDataGridViewTextBoxColumn, Me.Column1})
-        Me.DataGridView1.DataSource = Me.ClientsBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 58)
+        Me.DataGridView1.DataSource = Me.ClientsBindingSource1
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 23)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(693, 328)
+        Me.DataGridView1.Size = New System.Drawing.Size(542, 292)
         Me.DataGridView1.TabIndex = 0
         '
         'IdCliDataGridViewTextBoxColumn
@@ -386,7 +219,7 @@ Partial Class Form3
         '
         Me.Label1.Font = New System.Drawing.Font("Elephant", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(300, 14)
+        Me.Label1.Location = New System.Drawing.Point(111, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(575, 34)
         Me.Label1.TabIndex = 2
@@ -395,16 +228,16 @@ Partial Class Form3
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(925, 42)
+        Me.TextBox9.Location = New System.Drawing.Point(744, 43)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(205, 20)
+        Me.TextBox9.Size = New System.Drawing.Size(151, 20)
         Me.TextBox9.TabIndex = 9
         '
         'Label10
         '
         Me.Label10.Font = New System.Drawing.Font("Elephant", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(833, 42)
+        Me.Label10.Location = New System.Drawing.Point(652, 44)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(86, 19)
         Me.Label10.TabIndex = 10
@@ -431,7 +264,7 @@ Partial Class Form3
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.Image = Global.GestionParking.My.Resources.Resources.bouton_actualiser
-        Me.Button8.Location = New System.Drawing.Point(1103, 8)
+        Me.Button8.Location = New System.Drawing.Point(879, 9)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(45, 28)
         Me.Button8.TabIndex = 8
@@ -441,9 +274,9 @@ Partial Class Form3
         '
         Me.Button6.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.Image = Global.GestionParking.My.Resources.Resources.printer__1_
-        Me.Button6.Location = New System.Drawing.Point(870, 516)
+        Me.Button6.Location = New System.Drawing.Point(774, 451)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(104, 33)
+        Me.Button6.Size = New System.Drawing.Size(104, 26)
         Me.Button6.TabIndex = 8
         Me.Button6.Text = "Imprimer"
         Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -453,9 +286,9 @@ Partial Class Form3
         '
         Me.Button5.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.Image = Global.GestionParking.My.Resources.Resources.next_button
-        Me.Button5.Location = New System.Drawing.Point(870, 477)
+        Me.Button5.Location = New System.Drawing.Point(774, 412)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(104, 33)
+        Me.Button5.Size = New System.Drawing.Size(104, 26)
         Me.Button5.TabIndex = 7
         Me.Button5.Text = "Suivant"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -465,9 +298,9 @@ Partial Class Form3
         '
         Me.Button4.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Image = Global.GestionParking.My.Resources.Resources.delete
-        Me.Button4.Location = New System.Drawing.Point(529, 516)
+        Me.Button4.Location = New System.Drawing.Point(433, 451)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(115, 33)
+        Me.Button4.Size = New System.Drawing.Size(98, 26)
         Me.Button4.TabIndex = 6
         Me.Button4.Text = "Supprimer"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -477,9 +310,9 @@ Partial Class Form3
         '
         Me.Button1.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.GestionParking.My.Resources.Resources.previous
-        Me.Button1.Location = New System.Drawing.Point(170, 477)
+        Me.Button1.Location = New System.Drawing.Point(74, 412)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(121, 33)
+        Me.Button1.Size = New System.Drawing.Size(115, 26)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Précedent"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -489,9 +322,9 @@ Partial Class Form3
         '
         Me.Button2.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.GestionParking.My.Resources.Resources.diskette__2_
-        Me.Button2.Location = New System.Drawing.Point(170, 516)
+        Me.Button2.Location = New System.Drawing.Point(74, 451)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(121, 33)
+        Me.Button2.Size = New System.Drawing.Size(115, 26)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Sauvegarder"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -501,9 +334,9 @@ Partial Class Form3
         '
         Me.Button3.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.GestionParking.My.Resources.Resources.follow__1_
-        Me.Button3.Location = New System.Drawing.Point(529, 477)
+        Me.Button3.Location = New System.Drawing.Point(433, 412)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(115, 33)
+        Me.Button3.Size = New System.Drawing.Size(98, 26)
         Me.Button3.TabIndex = 5
         Me.Button3.Text = "Nouveau"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -515,19 +348,205 @@ Partial Class Form3
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Elephant", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.Image = Global.GestionParking.My.Resources.Resources.funnel__1_
-        Me.Button7.Location = New System.Drawing.Point(1109, 30)
+        Me.Button7.Location = New System.Drawing.Point(885, 31)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(56, 45)
         Me.Button7.TabIndex = 8
         Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button7.UseVisualStyleBackColor = True
         '
+        'ClientsBindingSource1
+        '
+        Me.ClientsBindingSource1.DataMember = "Clients"
+        Me.ClientsBindingSource1.DataSource = Me.GestionsParkingsDataSet
+        '
+        'Id_CliLabel
+        '
+        Id_CliLabel.AutoSize = True
+        Id_CliLabel.Location = New System.Drawing.Point(29, 22)
+        Id_CliLabel.Name = "Id_CliLabel"
+        Id_CliLabel.Size = New System.Drawing.Size(48, 17)
+        Id_CliLabel.TabIndex = 0
+        Id_CliLabel.Text = "Id Cli:"
+        '
+        'Id_CliTextBox
+        '
+        Me.Id_CliTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "Id_Cli", True))
+        Me.Id_CliTextBox.Location = New System.Drawing.Point(132, 21)
+        Me.Id_CliTextBox.Name = "Id_CliTextBox"
+        Me.Id_CliTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.Id_CliTextBox.TabIndex = 1
+        Me.Id_CliTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'NomLabel
+        '
+        NomLabel.AutoSize = True
+        NomLabel.Location = New System.Drawing.Point(29, 52)
+        NomLabel.Name = "NomLabel"
+        NomLabel.Size = New System.Drawing.Size(43, 17)
+        NomLabel.TabIndex = 2
+        NomLabel.Text = "Nom:"
+        '
+        'NomTextBox
+        '
+        Me.NomTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "Nom", True))
+        Me.NomTextBox.Location = New System.Drawing.Point(132, 51)
+        Me.NomTextBox.Name = "NomTextBox"
+        Me.NomTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.NomTextBox.TabIndex = 3
+        Me.NomTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PrénomsLabel
+        '
+        PrénomsLabel.AutoSize = True
+        PrénomsLabel.Location = New System.Drawing.Point(29, 82)
+        PrénomsLabel.Name = "PrénomsLabel"
+        PrénomsLabel.Size = New System.Drawing.Size(70, 17)
+        PrénomsLabel.TabIndex = 4
+        PrénomsLabel.Text = "Prénoms:"
+        '
+        'PrénomsTextBox
+        '
+        Me.PrénomsTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "Prénoms", True))
+        Me.PrénomsTextBox.Location = New System.Drawing.Point(132, 81)
+        Me.PrénomsTextBox.Name = "PrénomsTextBox"
+        Me.PrénomsTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.PrénomsTextBox.TabIndex = 5
+        Me.PrénomsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'AgeLabel
+        '
+        AgeLabel.AutoSize = True
+        AgeLabel.Location = New System.Drawing.Point(29, 112)
+        AgeLabel.Name = "AgeLabel"
+        AgeLabel.Size = New System.Drawing.Size(36, 17)
+        AgeLabel.TabIndex = 6
+        AgeLabel.Text = "Age:"
+        '
+        'AgeTextBox
+        '
+        Me.AgeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "Age", True))
+        Me.AgeTextBox.Location = New System.Drawing.Point(132, 111)
+        Me.AgeTextBox.Name = "AgeTextBox"
+        Me.AgeTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.AgeTextBox.TabIndex = 7
+        Me.AgeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'SexeLabel
+        '
+        SexeLabel.AutoSize = True
+        SexeLabel.Location = New System.Drawing.Point(29, 142)
+        SexeLabel.Name = "SexeLabel"
+        SexeLabel.Size = New System.Drawing.Size(42, 17)
+        SexeLabel.TabIndex = 8
+        SexeLabel.Text = "Sexe:"
+        '
+        'SexeTextBox
+        '
+        Me.SexeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "Sexe", True))
+        Me.SexeTextBox.Location = New System.Drawing.Point(132, 141)
+        Me.SexeTextBox.Name = "SexeTextBox"
+        Me.SexeTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.SexeTextBox.TabIndex = 9
+        Me.SexeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TelLabel
+        '
+        TelLabel.AutoSize = True
+        TelLabel.Location = New System.Drawing.Point(29, 172)
+        TelLabel.Name = "TelLabel"
+        TelLabel.Size = New System.Drawing.Size(33, 17)
+        TelLabel.TabIndex = 10
+        TelLabel.Text = "Tel:"
+        '
+        'TelTextBox
+        '
+        Me.TelTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "Tel", True))
+        Me.TelTextBox.Location = New System.Drawing.Point(132, 171)
+        Me.TelTextBox.Name = "TelTextBox"
+        Me.TelTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.TelTextBox.TabIndex = 11
+        Me.TelTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'SérieLabel
+        '
+        SérieLabel.AutoSize = True
+        SérieLabel.Location = New System.Drawing.Point(29, 202)
+        SérieLabel.Name = "SérieLabel"
+        SérieLabel.Size = New System.Drawing.Size(46, 17)
+        SérieLabel.TabIndex = 12
+        SérieLabel.Text = "Série:"
+        '
+        'SérieTextBox
+        '
+        Me.SérieTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "Série", True))
+        Me.SérieTextBox.Location = New System.Drawing.Point(132, 201)
+        Me.SérieTextBox.Name = "SérieTextBox"
+        Me.SérieTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.SérieTextBox.TabIndex = 13
+        Me.SérieTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'N_MatriculeLabel
+        '
+        N_MatriculeLabel.AutoSize = True
+        N_MatriculeLabel.Location = New System.Drawing.Point(29, 232)
+        N_MatriculeLabel.Name = "N_MatriculeLabel"
+        N_MatriculeLabel.Size = New System.Drawing.Size(91, 17)
+        N_MatriculeLabel.TabIndex = 14
+        N_MatriculeLabel.Text = "N°Matricule:"
+        '
+        'N_MatriculeTextBox
+        '
+        Me.N_MatriculeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "N°Matricule", True))
+        Me.N_MatriculeTextBox.Location = New System.Drawing.Point(132, 231)
+        Me.N_MatriculeTextBox.Name = "N_MatriculeTextBox"
+        Me.N_MatriculeTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.N_MatriculeTextBox.TabIndex = 15
+        Me.N_MatriculeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'DéchargéLabel
+        '
+        DéchargéLabel.AutoSize = True
+        DéchargéLabel.Location = New System.Drawing.Point(29, 264)
+        DéchargéLabel.Name = "DéchargéLabel"
+        DéchargéLabel.Size = New System.Drawing.Size(74, 17)
+        DéchargéLabel.TabIndex = 16
+        DéchargéLabel.Text = "Déchargé:"
+        '
+        'DéchargéCheckBox
+        '
+        Me.DéchargéCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.ClientsBindingSource1, "Déchargé", True))
+        Me.DéchargéCheckBox.Location = New System.Drawing.Point(146, 261)
+        Me.DéchargéCheckBox.Name = "DéchargéCheckBox"
+        Me.DéchargéCheckBox.Size = New System.Drawing.Size(180, 24)
+        Me.DéchargéCheckBox.TabIndex = 17
+        Me.DéchargéCheckBox.Text = "CheckBox1"
+        Me.DéchargéCheckBox.UseVisualStyleBackColor = True
+        '
+        'N_VérificationLabel
+        '
+        N_VérificationLabel.AutoSize = True
+        N_VérificationLabel.Location = New System.Drawing.Point(29, 292)
+        N_VérificationLabel.Name = "N_VérificationLabel"
+        N_VérificationLabel.Size = New System.Drawing.Size(103, 17)
+        N_VérificationLabel.TabIndex = 18
+        N_VérificationLabel.Text = "N°Vérification:"
+        '
+        'N_VérificationTextBox
+        '
+        Me.N_VérificationTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientsBindingSource1, "N°Vérification", True))
+        Me.N_VérificationTextBox.Location = New System.Drawing.Point(132, 291)
+        Me.N_VérificationTextBox.Name = "N_VérificationTextBox"
+        Me.N_VérificationTextBox.Size = New System.Drawing.Size(194, 24)
+        Me.N_VérificationTextBox.TabIndex = 19
+        Me.N_VérificationTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.RoyalBlue
-        Me.ClientSize = New System.Drawing.Size(1177, 570)
+        Me.BackColor = System.Drawing.Color.MidnightBlue
+        Me.ClientSize = New System.Drawing.Size(947, 498)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.Label10)
@@ -545,13 +564,12 @@ Partial Class Form3
         Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form3"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.ClientsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GestionsParkingsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClientsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -572,7 +590,6 @@ Partial Class Form3
     Friend WithEvents Label10 As Label
     Friend WithEvents Button7 As Button
     Friend WithEvents GestionsParkingsDataSet As GestionsParkingsDataSet
-    Friend WithEvents ClientsBindingSource As BindingSource
     Friend WithEvents ClientsTableAdapter As GestionsParkingsDataSetTableAdapters.ClientsTableAdapter
     Friend WithEvents IdCliDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -584,7 +601,10 @@ Partial Class Form3
     Friend WithEvents NMatriculeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DéchargéDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
     Friend WithEvents NVérificationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TableAdapterManager As GestionsParkingsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents Button8 As Button
     Friend WithEvents Id_CliTextBox As TextBox
+    Friend WithEvents ClientsBindingSource1 As BindingSource
     Friend WithEvents NomTextBox As TextBox
     Friend WithEvents PrénomsTextBox As TextBox
     Friend WithEvents AgeTextBox As TextBox
@@ -594,6 +614,4 @@ Partial Class Form3
     Friend WithEvents N_MatriculeTextBox As TextBox
     Friend WithEvents DéchargéCheckBox As CheckBox
     Friend WithEvents N_VérificationTextBox As TextBox
-    Friend WithEvents TableAdapterManager As GestionsParkingsDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents Button8 As Button
 End Class

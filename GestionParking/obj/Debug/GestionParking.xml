@@ -32,6 +32,11 @@ GestionParking
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:GestionParking.My.Resources.Resources.bouton_actualiser">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:GestionParking.My.Resources.Resources.car_parking">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
