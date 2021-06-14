@@ -3,6 +3,7 @@ Imports System.Data
 
 Public Class Form3
     Dim connection As New OleDbConnection(My.Settings.GestionsParkingsConnectionString)
+
     Private Sub Label3_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -51,9 +52,6 @@ Public Class Form3
             MessageBox.Show("Echec de sauvegarde")
         End Try
 
-        If (DéchargéCheckBox().Checked And MessageBox.Show("Sauvegarde reussie")) Then
-            Form5.Show()
-        End If
         connection.Close()
     End Sub
 
@@ -103,47 +101,30 @@ Public Class Form3
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
         Dim ds As New OleDbDataAdapter
-        Dim dt As New DataTable
-        connection.Open()
-        ds = New OleDb.OleDbDataAdapter("SELECT *FROM Clients WHERE N°Vérification='" & TextBox9.Text & "'", connection)
+            Dim dt As New DataTable
+            connection.Open()
+            ds = New OleDb.OleDbDataAdapter("SELECT *FROM Clients WHERE N°Vérification='" & TextBox9.Text & "'", connection)
         dt.Clear()
         ds.Fill(dt)
         DataGridView1.DataSource = dt
         connection.Close()
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
 
-
-        Dim selectedrow As DataGridViewRow
-
-
-
-
-
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-
-        Dim newData As DataGridViewRow
-        Dim index = e.ToString
-
-        newData = DataGridView1.Rows(index)
-
-        newData.Cells(0).Value = Id_CliTextBox.Text
-        newData.Cells(1).Value = NomTextBox.Text
-        newData.Cells(2).Value = PrénomsTextBox.Text
-        newData.Cells(3).Value = AgeTextBox.Text
-        newData.Cells(4).Value.Text
-        newData.Cells(0).Value = TelTextBox.Text
-        newData.Cells(5).Value = SérieTextBox.Text
-        newData.Cells(6).Value = N_MatriculeTextBox.Text
-        newData.Cells(7).Value = N_VérificationTextBox.Text
-
+        DataGridView1.DataSource = ClientsBindingSource1.List
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub DéchargéCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles DéchargéCheckBox.CheckedChanged
 
     End Sub
 End Class
